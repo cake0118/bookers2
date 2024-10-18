@@ -3,13 +3,17 @@
   <% if @user.image.attached? %>
     <%= image_tag @user.image, size: "100x100" %>
   <% else %>
-    <%= image.tag "no_image", size: "100x100" %>
+    <%= image_tag "no_image", size: "100x100" %>
   <% end %>
   <p>name</p>
   <p><%= @user.name %></p>
   <p>introduction</p>
   <p><%= @user.introduction %></p>
-  <p></p>
+  <p>
+    <%= link_to user_path(current_user) do %>
+      <i class="fa-solid fa-user-gear"></i>
+    <% end %>
+  </p>
 </div>
 
 <div>
