@@ -1,17 +1,4 @@
-<div>
-  <h2>User</h2>
-  <%= image_tag @user.get_image(80,80) %>
-  <p>name</p>
-  <p><%= @user.name %></p>
-  <p>introduction</p>
-  <p><%= @user.introduction %></p>
-  <p>
-    <%= link_to user_path(current_user) do %>
-      <i class="fa-solid fa-user-gear"></i>
-    <% end %>
-  </p>
-</div>
-
+<%= render partial: 'infonew', locals: { user: @user, book: @book } %>
 <div>
   <h2>New book</h2>
   <%= form_with model: @book do |f| %>
