@@ -1,10 +1,6 @@
 <div>
   <h2>User</h2>
-  <% if @user.image.attached? %>
-    <%= image_tag @user.image, size: "100x100" %>
-  <% else %>
-    <%= image_tag "no_image", size: "100x100" %>
-  <% end %>
+  <%= image_tag @user.get_image(80,80) %>
   <p>name</p>
   <p><%= @user.name %></p>
   <p>introduction</p>
