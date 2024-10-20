@@ -10,6 +10,8 @@
   </p>
   <p><%= link_to @book_a.title, book_path(@book_a.id) %></p>
   <p><%= @book_a.body %>
-  <p><%= link_to "Edit", edit_book_path(@book_a.id) %></p>
-  <p><%= link_to "Destroy", book_path(@book_a.id), method: :delete, "date-confirm" => "本当に消しますか？" %></p>
+  <% if @book_a.user == current_user %>
+    <p><%= link_to "Edit", edit_book_path(@book_a.id) %></p>
+    <p><%= link_to "Destroy", book_path(@book_a.id), method: :delete, "date-confirm" => "本当に消しますか？" %></p>
+  <% end %>
 </div>
