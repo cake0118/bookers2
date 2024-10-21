@@ -1,17 +1,28 @@
 <%= flash[:notice] %>
+<div class="container">
+  <div class="row">
 <%= render partial: 'infonew', locals: { user: @user, book: @book } %>
 
-<div>
-  <h2>Book detail</h2>
-  <p>
-    <% link_to user_path %>
-    <%= image_tag @book_a.user.get_image(80,80) %>
-    <%= @book_a.title %>
-  </p>
-  <p><%= link_to @book_a.title, book_path(@book_a.id) %></p>
-  <p><%= @book_a.body %>
-  <% if @book_a.user == current_user %>
-    <p><%= link_to "Edit", edit_book_path(@book_a.id) %></p>
-    <p><%= link_to "Destroy", book_path(@book_a.id), method: :delete, "date-confirm" => "本当に消しますか？" %></p>
-  <% end %>
+    <div class="col-md-8 offset-md-1">
+      <div>
+        <h2>Book detail</h2>
+        <table class="table">
+          <tbody>
+            <td>
+              <%= link_to user_path(@user.id) do%>
+              <%= image_tag @book_a.user.get_image(80,80) %><br>
+              <%= @book_a.user.name %>
+              <% end %>
+            </td>
+            <td><%= link_to @book_a.title, book_path(@book_a.id) %></td>
+            <td><%= @book_a.body %></td>
+            <% if @book_a.user == current_user %>
+            <td><%= link_to "Edit", edit_book_path(@book_a.id), class: "btn btn-success" %></td>
+            <td><%= link_to "Destroy", book_path(@book_a.id), method: :delete, "date-confirm" => "本当に消しますか？", class: "btn btn-danger" %></td>
+            <% end %>
+         </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 </div>

@@ -12,11 +12,11 @@
   </head>
 
   <body class="d-flex flex-column vh-100">
-    <header class="shadow-sm">
+    <header class="shadow-sm" >
       <!--navbar-darkでハンバーガーの色、bg-darkで背景色-->
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-          <%= link_to "Bookers", root_path, class: "text-white" %>
+          <%= link_to "Bookers", root_path, class: "text-white", style: "padding: 8px;"%>
           <button class="navbar-toggler" type="botton" data-toggle="collapse" data-target="#navIndex"
                         aria-controls="navIndex" aria-expanded="fales" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -25,50 +25,50 @@
             <ul class="navbar-nav ml-auto ">
               <% if user_signed_in? %>
               <li class="nav-item">
-                <%= link_to user_path(current_user.id), class: "text-white" do %>
+                <%= link_to user_path(current_user.id), class: "text-white", style: "padding: 8px;" do %>
                 <i class="fa-solid fa-house"></i>
                 Home
                 <% end %>
               </li>
               <li class="nav-item">
-                <%= link_to users_path, class: "text-white" do %>
+                <%= link_to users_path, class: "text-white", style: "padding: 8px;" do %>
                 <i class="fa-solid fa-users"></i>
                  Users
                  <% end %>
               </li>
               <li class="nav-item">
-                <%= link_to books_path, class: "text-white" do %>
+                <%= link_to books_path, class: "text-white", style: "padding: 8px;" do %>
                 <i class="fa-solid fa-book-open"></i>
                 Books
                 <% end %>
               </li>
               <li class="nav-item">
-                <%= link_to destroy_user_session_path, method: :delete, class: "text-white" do %>
+                <%= link_to destroy_user_session_path, method: :delete, class: "text-white", style: "padding: 8px;" do %>
                 <i class="fa-solid fa-right-from-bracket"></i>
                 Log out
                 <% end %>
               </li>
               <% else %>
               <li class="nav-item">
-                <%= link_to root_path, class: "text-white" do %>
+                <%= link_to root_path, class: "text-white", style: "padding: 8px;" do %>
                 <i class="fa-solid fa-house"></i>
                 Home
                 <% end %>
               </li>
               <li class="nav-item">
-                <%= link_to "/homes/about", class: "text-white" do %>
+                <%= link_to "/homes/about", class: "text-white", style: "padding: 8px;" do %>
                 <i class="fa-solid fa-link"></i>
                 About
                 <% end %>
               </li>
               <li class="nav-item">
-                <%= link_to new_user_registration_path, class: "text-white" do %>
+                <%= link_to new_user_registration_path, class: "text-white", style: "padding: 8px;" do %>
                 <i class="fa-solid fa-user-plus"></i>
                 Sign up
                 <% end %>
               </li>
               <li class="nav-item">
-                <%= link_to new_user_session_path, class: "text-white" do %>
+                <%= link_to new_user_session_path, class: "text-white", style: "padding: 8px;" do %>
                 <i class="fa-solid fa-right-to-bracket"></i>
                 Log in
                 <% end %>
