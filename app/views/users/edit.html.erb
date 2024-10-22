@@ -6,13 +6,29 @@
     <% end %>
   </ul>
 <% end %>
-<h2>User info</h2>
-<%= form_with model: @user do |f| %>
-<h4>Name</h4>
-<%= f.text_field :name %>
-<h4>Image</h4>
-<%= f.file_field :image, accept: "image/*" %>
-<h4>Introduction</h4>
-<%= f.text_area :introduction %>
-<%= f.submit "Update User" %>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+      <div class="mb-2">
+        <h2>User info</h2>
+        <%= form_with model: @user, class: "w-100" do |f| %>
+      </div>
+      <div class="mb-3">
+        <h6>Name</h6>
+        <%= f.text_field :name, class: "form-control" %>
+      </div>
+      <div class="mb-3">
+        <h6>Image</h6>
+        <%= f.file_field :image, accept: "image/*" %>
+      </div>
+      <div class="mb-3">
+        <h6>Introduction</h6>
+        <%= f.text_area :introduction, class: "form-control" %>
+      </div>
+      <div class="mb-3">
+      <%= f.submit "Update User", class: "btn btn-secondary" %>
+      </div>
+      <% end %>
+    </end>
+  </end>
+</end>
